@@ -1,4 +1,5 @@
 use sycamore::prelude::*;
+use chrono::prelude::*;
 
 #[component]
 fn App<G: Html>(cx: Scope) -> View<G> {
@@ -12,12 +13,26 @@ fn App<G: Html>(cx: Scope) -> View<G> {
         }
     };
 
+    let day = create_signal(cx, String::new());
+    
+    let displayed_date = || {
+        if day.get().is_empty() {        
+            Utc::now().to_string()
+        } else {
+            day.get().as_ref().clone()
+        }
+    };
+    
     view! { cx,
         div {
             h1 {
                 "Hello "
                 (displayed_name())
                 "!"
+            }
+            
+            p {
+                (displayed_date())
             }
 
             input(placeholder="What is your name?", bind:value=name)
