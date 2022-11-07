@@ -329,6 +329,11 @@ imports.wbg.__wbg_body_3cb4b4042b9a632b = function(arg0) {
     const ret = getObject(arg0).body;
     return isLikeNone(ret) ? 0 : addHeapObject(ret);
 };
+imports.wbg.__wbg_createComment_0df3a4d0d91032e7 = function(arg0, arg1, arg2) {
+    var v0 = getCachedStringFromWasm0(arg1, arg2);
+    const ret = getObject(arg0).createComment(v0);
+    return addHeapObject(ret);
+};
 imports.wbg.__wbg_createElement_976dbb84fe1661b5 = function() { return handleError(function (arg0, arg1, arg2) {
     var v0 = getCachedStringFromWasm0(arg1, arg2);
     const ret = getObject(arg0).createElement(v0);
@@ -511,8 +516,8 @@ imports.wbg.__wbindgen_object_drop_ref = function(arg0) {
 imports.wbg.__wbindgen_throw = function(arg0, arg1) {
     throw new Error(getStringFromWasm0(arg0, arg1));
 };
-imports.wbg.__wbindgen_closure_wrapper572 = function(arg0, arg1, arg2) {
-    const ret = makeMutClosure(arg0, arg1, 52, __wbg_adapter_18);
+imports.wbg.__wbindgen_closure_wrapper584 = function(arg0, arg1, arg2) {
+    const ret = makeMutClosure(arg0, arg1, 54, __wbg_adapter_18);
     return addHeapObject(ret);
 };
 
@@ -549,7 +554,7 @@ function initSync(module) {
 
 async function init(input) {
     if (typeof input === 'undefined') {
-        input = new URL('butterwick-tech-sycamore-31c64efcd40695e6_bg.wasm', import.meta.url);
+        input = new URL('butterwick-tech-sycamore-8e550fad43fefea_bg.wasm', import.meta.url);
     }
     const imports = getImports();
 
